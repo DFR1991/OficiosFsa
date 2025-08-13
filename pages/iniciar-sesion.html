@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminLTE 3 | Registration Page</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition register-page" style="background-color: white;">
+
+  <nav class="navbar navbar-expand  navbar-light  fixed-top row border-secondary border-bottom" style="background-color: white;">
+
+    <div class="col">
+      <a class="nav-link" data-widget="pushmenu" href="index_1.html" role="button"><i class="fa fa-arrow-left text-primary"></i></a>
+    </div>
+
+    <div class="col">
+
+    </div>
+       
+    <div class="col-3" >
+        <img src="../dist/img/logo-2.png" class="profile-user-img img-fluid img-circle bg-light ml-3"  style="width: 50px; height: 50px;">
+    </div>
+
+</nav>
+
+  <!-- left column -->
+   <br><br><br><br>
+  <span style="font-size: 20px;"><b>Inicia Sesiòn</b></span>
+
+  <div class="col-10">
+    <form id="quickForm" >
+      <div class="card-body">
+        <div class="form-group">
+          <label for="exampleInputName" class="text-secondary">Email</label>
+          <input type="email" name="name" class="form-control" id="name">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputLastname"  class="text-secondary">Contraseña</label>
+          <input type="password" name="lastname" class="form-control" id="lastname" >
+        </div>
+
+        <p class="text-center"> <a href=""> Has olvidado tu contraseña?</a></p>
+
+      </div>
+      <!-- /.card-body -->
+      <div class="row justify-content-center mb-3">
+        <a href="inicio.html" class="btn btn-light text-white" style="background-color: #051e52;;"><b>Ingresar</b></a>
+      </div>
+
+      <p class="text-center"> <b>o continua con</b></p>
+
+      <div class="row justify-content-center mb-3">
+
+        <div class="col">
+          <a href="">
+            <img src="../dist/img/google_icon.png" class="profile-user-img img-fluid img-circle border border-0"  style="width: 75px; height: 75px;">
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="">
+            <img src="../dist/img/facebook_icon.png" class="profile-user-img img-fluid img-circle border border-0"  style="width: 75px; height: 75px;">
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="">
+            <img src="../dist/img/Instagram_icon.png" class="profile-user-img img-fluid img-circle border border-0"  style="width: 75px; height: 75px;">
+          </a>
+        </div>
+
+      </div>
+
+      <p class="text-center"> <span>Al ingresar aceptas los</span><a href=""> tèrminos y condiciones</a></p>
+
+    </form>
+    </div>
+  <!--/.col (left) -->
+  <!-- right column -->
+
+
+
+  <!-- /.card -->
+</div>
+<!-- /.register-box -->
+
+<!-- jQuery -->
+
+
+<script>
+  $(function () {
+    $.validator.setDefaults({
+      submitHandler: function () {
+        alert( "Form successful submitted!" );
+      }
+    });
+    $('#quickForm').validate({
+      rules: {
+        email: {
+          required: true,
+          email: true,
+        },
+        password: {
+          required: true,
+          minlength: 5
+        },
+        terms: {
+          required: true
+        },
+      },
+      messages: {
+        email: {
+          required: "Please enter a email address",
+          email: "Please enter a valid email address"
+        },
+        password: {
+          required: "Please provide a password",
+          minlength: "Your password must be at least 5 characters long"
+        },
+        terms: "Please accept our terms"
+      },
+      errorElement: 'span',
+      errorPlacement: function (error, element) {
+        error.addClass('invalid-feedback');
+        element.closest('.form-group').append(error);
+      },
+      highlight: function (element, errorClass, validClass) {
+        $(element).addClass('is-invalid');
+      },
+      unhighlight: function (element, errorClass, validClass) {
+        $(element).removeClass('is-invalid');
+      }
+    });
+  });
+  </script>
+</body>
+</html>
